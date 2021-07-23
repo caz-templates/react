@@ -1,20 +1,50 @@
 {
   "name": "<%= name %>",
   "version": "<%= version %>",
+  "private": true,
   "description": "<%= description %>",
   "keywords": [
     "<%= name %>",
     "zce"
   ],
   "repository": "<%= github %>/<%= name %>",
-  "license": "<%= license %>",
+  "license": "MIT",
   "author": "<%= author %> <<%= email %>> (<%= url %>)",
-  "scripts": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"<% if (features.includes('test')) { %>,
+    "test": "react-scripts test"<% } %>
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
   "renovate": {
     "extends": [
       "zce"
     ]
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {<% if (features.includes('test')) { %>
+    "@testing-library/jest-dom": "5.14.1",
+    "@testing-library/react": "12.0.0",
+    "@testing-library/user-event": "13.2.0",<% } %>
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-scripts": "4.0.3",
+    "web-vitals": "2.1.0"
+  }
 }
