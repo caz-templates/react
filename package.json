@@ -38,8 +38,17 @@
       "template"
     ]
   },
+  "dependencies": {
+    "@testing-library/jest-dom": "5.14.1",
+    "@testing-library/react": "12.0.0",
+    "@testing-library/user-event": "13.2.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-scripts": "4.0.3",
+    "web-vitals": "2.1.0"
+  },
   "devDependencies": {
-    "caz": "0.7.0",
+    "caz": "0.8.0",
     "jest": "27.0.6",
     "standard": "16.0.3"
   }
