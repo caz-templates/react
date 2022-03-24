@@ -51,6 +51,15 @@ module.exports = {
       initial: 'zce'
     },
     {
+      name: 'features',
+      type: 'multiselect',
+      message: 'Choose the features you need',
+      instructions: false,
+      choices: [
+        { title: 'Automatic test', value: 'test', selected: true }
+      ]
+    },
+    {
       name: 'install',
       type: 'confirm',
       message: 'Install dependencies',

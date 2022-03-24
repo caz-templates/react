@@ -15,7 +15,7 @@ beforeAll(async () => {
 })
 
 test('minimal', async () => {
-  inject(['minimal', '0.1.0', 'minimal template', 'zce', 'w@zce.me', 'https://zce.me', 'zce', false, 'npm'])
+  inject(['minimal', '0.1.0', 'minimal template', 'zce', 'w@zce.me', 'https://zce.me', 'zce', [], false, 'npm'])
   const project = join(temp, 'minimal')
   await caz(template, project, { force: true })
   expect(fs.existsSync(project)).toBe(true)
@@ -24,7 +24,7 @@ test('minimal', async () => {
 })
 
 test('maximal', async () => {
-  inject(['maximal', '0.1.0', 'maximal template', 'zce', 'w@zce.me', 'https://zce.me', 'zce', false, 'npm'])
+  inject(['maximal', '0.1.0', 'maximal template', 'zce', 'w@zce.me', 'https://zce.me', 'zce', ['test'], false, 'npm'])
   const project = join(temp, 'maximal')
   await caz(template, project, { force: true })
   expect(fs.existsSync(project)).toBe(true)
