@@ -51,16 +51,6 @@ module.exports = {
       initial: 'zce'
     },
     {
-      name: 'features',
-      type: 'multiselect',
-      message: 'Choose the features you need',
-      instructions: false,
-      choices: [
-        { title: 'Automatic test', value: 'test', selected: true },
-        { title: 'Foo', value: 'foo' }
-      ]
-    },
-    {
       name: 'install',
       type: 'confirm',
       message: 'Install dependencies',
@@ -73,8 +63,8 @@ module.exports = {
       hint: ' ',
       choices: [
         { title: 'npm', value: 'npm' },
-        { title: 'yarn', value: 'yarn' },
-        { title: 'pnpm', value: 'pnpm' }
+        { title: 'pnpm', value: 'pnpm' },
+        { title: 'yarn', value: 'yarn' }
       ]
     }
   ],
@@ -100,7 +90,7 @@ module.exports = {
       console.log(`  $ cd ${path.relative(process.cwd(), ctx.dest)}`)
     }
     if (ctx.config.install === false) {
-      console.log(`  $ npm install # or yarn`)
+      console.log('  $ npm install')
     }
     console.log(`  $ ${ctx.config.install ? ctx.config.install : 'npm'} run start`)
     console.log('\nHappy hacking :)\n')
